@@ -8,7 +8,7 @@ def typewriter(message):
         sys.stdout.flush
         time.sleep(0.05)
     sys.stdout.write('\n')
-
+    
 def error_handler():
     typewriter("please type that again. the internet doesnt like you currently.")
 

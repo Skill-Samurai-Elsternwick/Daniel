@@ -1,0 +1,54 @@
+import random
+
+score = ["leaderboard"]
+
+def game():
+    print("")
+    difficulty = (input("please choose a difficulty 1, 2 or 3 "))
+
+    if difficulty == "1":
+        maxNumber = 10
+    elif difficulty == "2":
+        maxNumber = 20
+    elif difficulty == "3":
+        maxNumber = 30
+
+    number = random.randint(1, maxNumber)
+    lives = 6
+
+    myName = input("what is your name? ")
+    print("well, " + myName + " I am thinking of a number between 1 and " + str(maxNumber))
+
+    for guessesTaken in range(lives):
+        print("You have " + str(lives - guessesTaken) + " guesses left")
+        guess = input("Take a guess: ")
+        guess = int(guess)
+
+        if guess == number:
+            print("Good job you won!")
+
+        elif guess < number:
+            print("Your guess is too low")
+
+        elif guess > number:
+            print("your guess is too high")
+
+        elif guess > maxNumber:
+            print("your guess is out of range")
+
+    if guess != number:
+        number = dtr(number)
+        print("Nope. That number was not what i was thinking of. I was thinking of: " + number)
+        game_over()
+        
+    elif guess == number:
+        if guessesTaken+1 == 1:
+            grammar = "guess"
+        else:
+            grammar = "guesses"
+
+        print("That is correct I was thinking of " + number + " You took" + str(guessesTaken+1) + grammar)
+        
+
+
+game()
