@@ -48,7 +48,5 @@ def game():
             grammar = "guesses"
 
         print("That is correct I was thinking of " + number + " You took" + str(guessesTaken+1) + grammar)
-        
-
 
 game()
